@@ -56,7 +56,7 @@ from joblib import load
 
 pipeline_Embarked = load("pipeline_Embarked.joblib")
 encoders = load("encoders.joblib")
-# pipeline_model = load("pipeline_model.joblib")
+pipeline_model = load("pipeline_model.joblib")
 
 
 #%% Flask webpage
@@ -90,20 +90,20 @@ def home():
 @app.route('/predict',methods=['POST'])
 def predict():
     
-    # inputs = request.form.to_dict()
-    # inputs['Sex'] = inputs['Sex'].strip().lower()
-    # X = pd.DataFrame([list(inputs.values())], columns = list(inputs.keys()))
-    # y_pred = bool(pipeline_model.predict(X)[0])
+    inputs = request.form.to_dict()
+    inputs['Sex'] = inputs['Sex'].strip().lower()
+    X = pd.DataFrame([list(inputs.values())], columns = list(inputs.keys()))
+    y_pred = bool(pipeline_model.predict(X)[0])
     
-    # if y_pred:
-    #     prediction_text = 'The passenger survived (we think).'
-    # else:
-    #     prediction_text = 'The passenger did not survive (we think).'
+    if y_pred:
+        prediction_text = 'The passenger survived (we think).'
+    else:
+        prediction_text = 'The passenger did not survive (we think).'
     
     
-    # output = round(prediction[0], 2)
+    output = round(prediction[0], 2)
 
-    return render_template('index.html', prediction_text='testing')
+    return render_template('index.html', prediction_text=prediction_text)
 
 
 # if __name__ == '__main__':
