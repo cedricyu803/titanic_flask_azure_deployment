@@ -48,7 +48,7 @@ import numpy as np
 #%% model
 
 # load utils
-from model_pipeline import *
+# from model_pipeline import *
 
 
 # load pipelines and model
