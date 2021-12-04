@@ -56,7 +56,7 @@ from joblib import load
 
 pipeline_Embarked = load("pipeline_Embarked.joblib")
 encoders = load("encoders.joblib")
-pipeline_model = load("pipeline_model.joblib")
+# pipeline_model = load("pipeline_model.joblib")
 
 
 #%% Flask webpage
