@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Titanic Dataset Deployment</title>
+
+</head>
+
+<body style="background-color:MediumSeaGreen;">
+ <div class="login">
+	<h1>Titanic Dataset Deployment</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="PassengerId" placeholder="Passenger ID (optional)" style="height:40px;font-size:14pt;"/>
+		<input type="text" name="Pclass" placeholder="Ticket class (1, 2 or 3)" required="required" style="height:40px;font-size:14pt;"/>
+		<input type="text" name="Name" placeholder="Name (optional)" style="height:40px;font-size:14pt;"/>
+		<input type="text" name="Sex" placeholder="Sex ('male' or 'female' )" required="required" style="height:40px;font-size:14pt;"/>
+		<input type="text" name="Age" placeholder="Age" required="required" style="height:40px;font-size:14pt;"/>
+		<input type="text" name="SibSp" placeholder="Number of siblings / spouses aboard (integer number)"  size="50" required="required" style="height:40px;font-size:14pt;"/>
+		<input type="text" name="Parch" placeholder="Number of parents / children aboard (integer number)"  size="50" required="required" style="height:40px;font-size:14pt;"/>
+		<input type="text" name="Ticket" placeholder="Ticket (optional)" style="height:40px;font-size:14pt;"/>
+		<input type="text" name="Fare" placeholder="Fare (positive number)" required="required" style="height:40px;font-size:14pt;"/>
+		<input type="text" name="Cabin" placeholder="Cabin (optional)" style="height:40px;font-size:14pt;"/>
+		<input type="text" name="Embarked" placeholder="Embarked (enter S, C or Q)" required="required" style="height:40px;font-size:14pt;"/>
+        <button type="submit" class="btn btn-primary btn-block btn-large" style="background-color:white;height:40px;font-size:14pt;">'Predict' survivial </button>
+    </form>
+
+   <br>
+   <br>
+   <p style="color:blue; font-size:30px"> {{ prediction_text }} </p>
+
+ </div>
+</body>
+</html>
