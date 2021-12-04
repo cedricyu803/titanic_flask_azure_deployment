@@ -52,11 +52,11 @@ import numpy as np
 
 
 # load pipelines and model
-# from joblib import load
+from joblib import load
 
-# pipeline_Embarked = load("pipeline_Embarked.joblib")
-# encoders = load("encoders.joblib")
-# pipeline_model = load("pipeline_model.joblib")
+pipeline_Embarked = load("pipeline_Embarked.joblib")
+encoders = load("encoders.joblib")
+pipeline_model = load("pipeline_model.joblib")
 
 
 #%% Flask webpage
@@ -74,7 +74,7 @@ app = Flask(__name__)
 # create a random string with secrets
 # import secrets
 # secrets.token_hex(16)
-# app.config['SECRET_KEY'] = 'b856782614d9383f8e591c833996fc75'
+app.config['SECRET_KEY'] = 'b856782614d9383f8e591c833996fc75'
 
 
 
