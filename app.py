@@ -74,7 +74,7 @@ app = Flask(__name__)
 # create a random string with secrets
 # import secrets
 # secrets.token_hex(16)
-app.config['SECRET_KEY'] = 'b856782614d9383f8e591c833996fc75'
+# app.config['SECRET_KEY'] = 'b856782614d9383f8e591c833996fc75'
 
 
 
